@@ -20,6 +20,18 @@ struct Node* createNode(int data){
 	return newNode;
 }
 
+void PrintSinglyLinkedList(struct Node *head) {
+	struct Node *temp = head;
+	printf("Linked List: ");
+	
+	while (temp != NULL) {
+			printf("%d -> ", temp->data);
+			temp = temp->next;
+	}
+	
+	printf("NULL\n");
+}
+
 int main(){
 	
 	return 0;
