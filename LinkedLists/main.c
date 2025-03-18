@@ -33,6 +33,13 @@ void PrintSinglyLinkedList(struct Node *head) {
 }
 
 int main(){
+	printf("Insert an value for head node: ");
+	int data;
+	scanf("%d", &data);
+	struct Node *head = createNode(data);
+
+	PrintSinglyLinkedList(head);
 	
+	free(head);
 	return 0;
 }
