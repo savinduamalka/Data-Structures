@@ -32,8 +32,19 @@ void PrintSinglyLinkedList(struct Node *head) {
 	printf("NULL\n");
 }
 
+struct Node* insertAtBeginning(struct Node *head, int data){
+	struct Node *newNode = createNode(data);
+	
+	if (!newNode) {
+			return head; 
+	}
+
+	newNode->next = head;
+	return newNode;
+}
+
 int main(){
-	printf("Insert an value for head node: ");
+	printf("Insert a value for head node: ");
 	int data;
 	scanf("%d", &data);
 	struct Node *head = createNode(data);
