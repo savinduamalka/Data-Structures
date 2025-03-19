@@ -51,6 +51,10 @@ int main(){
 
 	PrintSinglyLinkedList(head);
 
+	if (!head) {
+		return 1;
+	}
+
 	printf("Insert a value for new node: ");
 	scanf("%d", &data);
 	head = insertAtBeginning(head, data);
