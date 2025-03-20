@@ -50,6 +50,10 @@ struct Node* insertAtEnd(struct Node *head, int data){
 			return head; 
 	}
 
+	if (head == NULL) { // Handle empty list situation
+		return newNode;
+}
+
 	struct Node *temp = head;
 	while (temp->next != NULL) {
 			temp = temp->next;
@@ -65,16 +69,22 @@ int main(){
 	scanf("%d", &data);
 	struct Node *head = createNode(data);
 
-	PrintSinglyLinkedList(head);
-
 	if (!head) {
 		return 1;
 	}
+
+	PrintSinglyLinkedList(head);
 
 	printf("Insert a value for new node: ");
 	scanf("%d", &data);
 	head = insertAtBeginning(head, data);
 
+	PrintSinglyLinkedList(head);
+
+	printf("Insert a value for new node at end: ");
+	scanf("%d", &data);
+
+	head = insertAtEnd(head, data);
 	PrintSinglyLinkedList(head);
 	
 	free(head);
