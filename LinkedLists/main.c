@@ -43,6 +43,22 @@ struct Node* insertAtBeginning(struct Node *head, int data){
 	return newNode;
 }
 
+struct Node* insertAtEnd(struct Node *head, int data){
+	struct Node *newNode = createNode(data);
+
+	if (!newNode) {
+			return head; 
+	}
+
+	struct Node *temp = head;
+	while (temp->next != NULL) {
+			temp = temp->next;
+	}
+
+	temp->next = newNode;
+	return head;
+}
+
 int main(){
 	printf("Insert a value for head node: ");
 	int data;
