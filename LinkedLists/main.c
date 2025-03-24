@@ -96,6 +96,6 @@ int main(){
 	head = insertAtEnd(head, data);
 	PrintSinglyLinkedList(head);
 	
-	free(head);
+	freeList(head);
 	return 0;
 }
