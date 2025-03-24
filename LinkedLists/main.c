@@ -63,6 +63,15 @@ struct Node* insertAtEnd(struct Node *head, int data){
 	return head;
 }
 
+void freeList(struct Node *head) {
+	struct Node *temp;
+	while (head != NULL) {
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
+}
+
 int main(){
 	printf("Insert a value for head node: ");
 	int data;
