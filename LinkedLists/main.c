@@ -72,6 +72,34 @@ void freeList(struct Node *head) {
 	}
 }
 
+struct Node* insertAtPosition(struct Node *head, int data, int position){
+	struct Node *newNode = createNode(data);
+
+	if (!newNode) {
+		return head; 
+	}
+
+	if (position == 1) {
+		newNode->next = head;
+		return newNode;
+	}
+
+	struct Node *temp = head;
+	for (int i = 1; i < position - 1 && temp != NULL; i++) {
+		temp = temp->next;
+	}
+
+	if (temp == NULL) {
+		printf("Position out of range\n");
+		free(newNode);
+		return head;
+	}
+
+	newNode->next = temp->next;
+	temp->next = newNode;
+	return head;
+}
+
 int main(){
 	printf("Insert a value for head node: ");
 	int data;
