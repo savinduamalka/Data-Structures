@@ -123,6 +123,15 @@ int main(){
 
 	head = insertAtEnd(head, data);
 	PrintSinglyLinkedList(head);
+
+	printf("Insert a value for new node at a specific position: ");
+	scanf("%d", &data);
+	int position;
+	printf("Enter the position: ");
+	scanf("%d", &position);
+
+	head = insertAtPosition(head, data, position);
+	PrintSinglyLinkedList(head);
 	
 	freeList(head);
 	return 0;
