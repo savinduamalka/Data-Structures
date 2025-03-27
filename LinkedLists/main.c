@@ -100,6 +100,19 @@ struct Node* insertAtPosition(struct Node *head, int data, int position){
 	return head;
 }
 
+
+struct Node* deleteFirstNode(struct Node *head) {
+	if (head == NULL) {
+		return NULL; 
+	}
+
+	struct Node *temp = head;
+	head = head->next; 
+	free(temp); 
+	return head;
+}	
+
+
 int main(){
 	printf("Insert a value for head node: ");
 	int data;
