@@ -146,6 +146,10 @@ int main(){
 	head = insertAtPosition(head, data, position);
 	PrintSinglyLinkedList(head);
 	
+	printf("Deleting the first node...\n");
+	head = deleteFirstNode(head);
+	PrintSinglyLinkedList(head);
+	
 	freeList(head);
 	return 0;
 }
