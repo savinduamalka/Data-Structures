@@ -169,6 +169,10 @@ int main(){
 	printf("Deleting the first node...\n");
 	head = deleteFirstNode(head);
 	PrintSinglyLinkedList(head);
+
+	printf("Deleting the last node...\n");
+	head = deleteLastNode(head);
+	PrintSinglyLinkedList(head);
 	
 	freeList(head);
 	return 0;
