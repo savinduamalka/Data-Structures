@@ -150,6 +150,19 @@ void countOfNode(struct Node *head){
 	printf("Count is %d\n",count);
 }
 
+void printDataOnly(struct Node* head){
+	if(!head){
+		printf("List is empty\n");
+		return;
+	}
+	struct Node* temp= head;
+
+	while(temp!=NULL){
+		printf("%d ",temp->data);
+		temp=temp->next;
+	}
+	printf("\n");
+}
 
 int main(){
 	printf("Insert a value for head node: ");
@@ -193,6 +206,8 @@ int main(){
 	PrintSinglyLinkedList(head);
 
 	countOfNode(head);
+
+	printDataOnly(head);
 	
 	freeList(head);
 	return 0;
