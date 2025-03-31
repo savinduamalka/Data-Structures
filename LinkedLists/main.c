@@ -164,6 +164,19 @@ void printDataOnly(struct Node* head){
 	printf("\n");
 }
 
+// Insert at beginning with pass by reference
+void insertAtBegingPassByRef(struct Node** head, int data){
+	struct Node* newNode = createNode(data);
+
+	if (!newNode) { 
+		return; 
+ }
+
+	newNode->next=*head;
+
+	*head= newNode;
+}
+
 int main(){
 	printf("Insert a value for head node: ");
 	int data;
