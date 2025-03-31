@@ -9,7 +9,7 @@ struct Node{
 struct Node* createNode(int data){
 	struct Node *newNode = (struct Node*) malloc(sizeof(struct Node));
 
-	if(!newNode){ // check whether there is an error in memory allocation
+	if(!newNode){ 
 		printf("Memory Error\n");
 		return NULL;
 	}
@@ -132,6 +132,24 @@ struct Node* deleteLastNode(struct Node *head) {
 	return head;
 }
 
+void countOfNode(struct Node *head){
+	int count=0;
+
+	if(!head){
+		printf("The list is empty\n");
+		return;
+	}
+
+	struct Node *temp=head;
+
+	while(temp!=NULL){
+		count++;
+		temp=temp->next;
+	}
+
+	printf("Count is %d\n",count);
+}
+
 
 int main(){
 	printf("Insert a value for head node: ");
@@ -173,6 +191,8 @@ int main(){
 	printf("Deleting the last node...\n");
 	head = deleteLastNode(head);
 	PrintSinglyLinkedList(head);
+
+	countOfNode(head);
 	
 	freeList(head);
 	return 0;
