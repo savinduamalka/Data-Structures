@@ -180,9 +180,12 @@ void insertAtBegingPassByRef(struct Node** head, int data){
 int main(){
 	printf("Insert a value for head node: ");
 	int data;
-	scanf("%d", &data);
-	struct Node *head = createNode(data);
+	if (scanf("%d", &data) != 1) {
+		printf("Invalid input. Exiting...\n");
+		return 1;
+	}
 
+	struct Node *head = createNode(data);
 	if (!head) {
 		return 1;
 	}
@@ -190,23 +193,36 @@ int main(){
 	PrintSinglyLinkedList(head);
 
 	printf("Insert a value for new node: ");
-	scanf("%d", &data);
+	if (scanf("%d", &data) != 1) {
+		printf("Invalid input. Exiting...\n");
+		freeList(head);
+		return 1;
+	}
 	head = insertAtBeginning(head, data);
-
 	PrintSinglyLinkedList(head);
 
 	printf("Insert a value for new node at end: ");
-	scanf("%d", &data);
-
+	if (scanf("%d", &data) != 1) {
+		printf("Invalid input. Exiting...\n");
+		freeList(head);
+		return 1;
+	}
 	head = insertAtEnd(head, data);
 	PrintSinglyLinkedList(head);
 
 	printf("Insert a value for new node at a specific position: ");
-	scanf("%d", &data);
+	if (scanf("%d", &data) != 1) {
+		printf("Invalid input. Exiting...\n");
+		freeList(head);
+		return 1;
+	}
 	int position;
 	printf("Enter the position: ");
-	scanf("%d", &position);
-
+	if (scanf("%d", &position) != 1 || position < 1) {
+		printf("Invalid position. Exiting...\n");
+		freeList(head);
+		return 1;
+	}
 	head = insertAtPosition(head, data, position);
 	PrintSinglyLinkedList(head);
 	
@@ -221,7 +237,7 @@ int main(){
 	countOfNode(head);
 
 	printDataOnly(head);
-	
+
 	freeList(head);
 	return 0;
 }
