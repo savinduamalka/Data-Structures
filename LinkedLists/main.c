@@ -177,6 +177,20 @@ void insertAtBegingPassByRef(struct Node** head, int data){
 	*head= newNode;
 }
 
+// Reverse the linked list
+struct Node* reverseList(struct Node *head) {
+	struct Node *prev = NULL, *current = head, *next = NULL;
+
+	while (current != NULL) {
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	return prev;
+}
+
 int main(){
 	printf("Insert a value for head node: ");
 	int data;
@@ -225,7 +239,7 @@ int main(){
 	}
 	head = insertAtPosition(head, data, position);
 	PrintSinglyLinkedList(head);
-	
+
 	printf("Deleting the first node...\n");
 	head = deleteFirstNode(head);
 	PrintSinglyLinkedList(head);
@@ -238,7 +252,10 @@ int main(){
 
 	printDataOnly(head);
 
+	printf("Reversing the linked list...\n");
+	head = reverseList(head);
+	PrintSinglyLinkedList(head);
+
 	freeList(head);
 	return 0;
 }
-
