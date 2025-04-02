@@ -286,6 +286,16 @@ int main(){
 	head = reverseList(head);
 	PrintSinglyLinkedList(head);
 
+	printf("Delete a node at a specific position: ");
+	printf("Enter the position: ");
+	if (scanf("%d", &position) != 1 || position < 1) {
+		printf("Invalid position. Exiting...\n");
+		freeList(head);
+		return 1;
+	}
+	head = deleteAtPosition(head, position);
+	PrintSinglyLinkedList(head);
+
 	freeList(head);
 	return 0;
 }
