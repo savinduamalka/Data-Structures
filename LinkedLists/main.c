@@ -191,6 +191,36 @@ struct Node* reverseList(struct Node *head) {
 	return prev;
 }
 
+struct Node* deleteAtPosition(struct Node *head, int position) {
+	if (head == NULL || position < 1) {
+		printf("Invalid position or empty list\n");
+		return head;
+	}
+
+	if (position == 1) {
+		struct Node *temp = head;
+		head = head->next;
+		free(temp);
+		return head;
+	}
+
+	struct Node *temp = head;
+	for (int i = 1; i < position - 1 && temp != NULL; i++) {
+		temp = temp->next;
+	}
+
+	if (temp == NULL || temp->next == NULL) {
+		printf("Position out of range\n");
+		return head;
+	}
+
+	struct Node *nodeToDelete = temp->next;
+	temp->next = nodeToDelete->next;
+	free(nodeToDelete);
+
+	return head;
+}
+
 int main(){
 	printf("Insert a value for head node: ");
 	int data;
