@@ -221,6 +221,21 @@ struct Node* deleteAtPosition(struct Node *head, int position) {
 	return head;
 }
 
+struct Node* deleteLinkedList(struct Node* head){
+	if(!head){
+		printf("No linked list here\n");
+		return NULL;
+	}
+
+	struct Node* temp= head;
+	while(temp!=NULL){
+		temp=temp->next;
+		free(head);
+		head=temp;
+	}
+	return NULL;
+}
+
 int main(){
 	printf("Insert a value for head node: ");
 	int data;
@@ -286,7 +301,7 @@ int main(){
 	head = reverseList(head);
 	PrintSinglyLinkedList(head);
 
-	printf("Delete a node at a specific position: ");
+	printf("Delete a node at a specific position\n");
 	printf("Enter the position: ");
 	if (scanf("%d", &position) != 1 || position < 1) {
 		printf("Invalid position. Exiting...\n");
@@ -296,6 +311,12 @@ int main(){
 	head = deleteAtPosition(head, position);
 	PrintSinglyLinkedList(head);
 
+	head =deleteLinkedList(head);
+
+	if(head==NULL){
+		printf("Lined List deleted successfully");
+	}
+	
 	freeList(head);
 	return 0;
 }
