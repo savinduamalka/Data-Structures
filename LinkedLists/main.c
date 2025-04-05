@@ -236,6 +236,20 @@ struct Node* deleteLinkedList(struct Node* head){
 	return NULL;
 }
 
+int searchNode(struct Node* head, int key) {
+    struct Node* current = head;  
+    int index = 1;
+
+    while (current != NULL) {
+        if (current->data == key)
+            return index;  
+        current = current->next;
+        index++;
+    }
+    return -1;     
+}
+
+
 int main(){
 	printf("Insert a value for head node: ");
 	int data;
@@ -310,6 +324,20 @@ int main(){
 	}
 	head = deleteAtPosition(head, position);
 	PrintSinglyLinkedList(head);
+
+    int key;
+    printf("Enter the value to search: ");
+    if (scanf("%d", &key) != 1) {
+        printf("Invalid input. Exiting...\n");
+        freeList(head);
+        return 1;
+    }
+    int searchResult = searchNode(head, key);
+    if (searchResult != -1)
+        printf("%d found at index %d\n", key, searchResult);
+    else
+        printf("%d not found in the list\n", key);
+
 
 	head =deleteLinkedList(head);
 
