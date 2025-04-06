@@ -249,102 +249,114 @@ int searchNode(struct Node* head, int key) {
     return -1;     
 }
 
+void displayMenu() {
+    printf("\nLinked List Operations:\n");
+    printf("1. Insert at Beginning\n");
+    printf("2. Insert at End\n");
+    printf("3. Insert at Position\n");
+    printf("4. Delete First Node\n");
+    printf("5. Delete Last Node\n");
+    printf("6. Delete at Position\n");
+    printf("7. Count Nodes\n");
+    printf("8. Print Data Only\n");
+    printf("9. Reverse List\n");
+    printf("10. Search Node\n");
+    printf("11. Print List\n");
+    printf("0. Exit\n");
+    printf("Enter your choice: ");
+}
 
-int main(){
-	printf("Insert a value for head node: ");
-	int data;
-	if (scanf("%d", &data) != 1) {
-		printf("Invalid input. Exiting...\n");
-		return 1;
-	}
+int main() {
+    struct Node *head = NULL;
+    int choice, data, position, key, searchResult;
 
-	struct Node *head = createNode(data);
-	if (!head) {
-		return 1;
-	}
+    do {
+        displayMenu();
+        if (scanf("%d", &choice) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while (getchar() != '\n'); 
+            choice = -1; 
+            continue;
+        }
 
-	PrintSinglyLinkedList(head);
+        switch (choice) {
+            case 1:
+                printf("Enter the value to insert at the beginning: ");
+                if (scanf("%d", &data) != 1) {
+                    printf("Invalid input.\n");
+                    break;
+                }
+                head = insertAtBeginning(head, data);
+                break;
+            case 2:
+                printf("Enter the value to insert at the end: ");
+                if (scanf("%d", &data) != 1) {
+                    printf("Invalid input.\n");
+                    break;
+                }
+                head = insertAtEnd(head, data);
+                break;
+            case 3:
+                printf("Enter the value to insert at the position: ");
+                if (scanf("%d", &data) != 1) {
+                    printf("Invalid input.\n");
+                    break;
+                }
+                printf("Enter the position: ");
+                if (scanf("%d", &position) != 1) {
+                    printf("Invalid input.\n");
+                    break;
+                }
+                head = insertAtPosition(head, data, position);
+                break;
+            case 4:
+                head = deleteFirstNode(head);
+                break;
+            case 5:
+                head = deleteLastNode(head);
+                break;
+            case 6:
+                printf("Enter the position to delete: ");
+                if (scanf("%d", &position) != 1) {
+                    printf("Invalid input.\n");
+                    break;
+                }
+                head = deleteAtPosition(head, position);
+                break;
+            case 7:
+                countOfNode(head);
+                break;
+            case 8:
+                printDataOnly(head);
+                break;
+            case 9:
+                head = reverseList(head);
+                break;
+            case 10:
+                printf("Enter the value to search: ");
+                if (scanf("%d", &key) != 1) {
+                    printf("Invalid input.\n");
+                    break;
+                }
+                searchResult = searchNode(head, key);
+                if (searchResult != -1)
+                    printf("%d found at index %d\n", key, searchResult);
+                else
+                    printf("%d not found in the list\n", key);
+                break;
+            case 11:
+                PrintSinglyLinkedList(head);
+                break;
+            case 0:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 0);
 
-	printf("Insert a value for new node: ");
-	if (scanf("%d", &data) != 1) {
-		printf("Invalid input. Exiting...\n");
-		freeList(head);
-		return 1;
-	}
-	head = insertAtBeginning(head, data);
-	PrintSinglyLinkedList(head);
+    head = deleteLinkedList(head);
+    freeList(head);
 
-	printf("Insert a value for new node at end: ");
-	if (scanf("%d", &data) != 1) {
-		printf("Invalid input. Exiting...\n");
-		freeList(head);
-		return 1;
-	}
-	head = insertAtEnd(head, data);
-	PrintSinglyLinkedList(head);
-
-	printf("Insert a value for new node at a specific position: ");
-	if (scanf("%d", &data) != 1) {
-		printf("Invalid input. Exiting...\n");
-		freeList(head);
-		return 1;
-	}
-	int position;
-	printf("Enter the position: ");
-	if (scanf("%d", &position) != 1 || position < 1) {
-		printf("Invalid position. Exiting...\n");
-		freeList(head);
-		return 1;
-	}
-	head = insertAtPosition(head, data, position);
-	PrintSinglyLinkedList(head);
-
-	printf("Deleting the first node...\n");
-	head = deleteFirstNode(head);
-	PrintSinglyLinkedList(head);
-
-	printf("Deleting the last node...\n");
-	head = deleteLastNode(head);
-	PrintSinglyLinkedList(head);
-
-	countOfNode(head);
-
-	printDataOnly(head);
-
-	printf("Reversing the linked list...\n");
-	head = reverseList(head);
-	PrintSinglyLinkedList(head);
-
-	printf("Delete a node at a specific position\n");
-	printf("Enter the position: ");
-	if (scanf("%d", &position) != 1 || position < 1) {
-		printf("Invalid position. Exiting...\n");
-		freeList(head);
-		return 1;
-	}
-	head = deleteAtPosition(head, position);
-	PrintSinglyLinkedList(head);
-
-    int key;
-    printf("Enter the value to search: ");
-    if (scanf("%d", &key) != 1) {
-        printf("Invalid input. Exiting...\n");
-        freeList(head);
-        return 1;
-    }
-    int searchResult = searchNode(head, key);
-    if (searchResult != -1)
-        printf("%d found at index %d\n", key, searchResult);
-    else
-        printf("%d not found in the list\n", key);
-
-
-	head =deleteLinkedList(head);
-
-	if(head==NULL){
-		printf("Lined List deleted successfully");
-	}
-	
-	freeList(head);
-	return 0;
+    return 0;
 }
