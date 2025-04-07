@@ -24,6 +24,21 @@ struct Node* createNode(int data){
   return newNode;
 }
 
+void insertAtBeggining(int data){
+  struct Node* newNode= createNode(data);
+
+  if(!newNode){
+    printf("Failed...");
+    return;
+  }
+
+  newNode->next=head;
+  head->prev=newNode;
+
+  head=newNode;
+
+}
+
 int main(){
   head= createNode(1001);
   return 0;
