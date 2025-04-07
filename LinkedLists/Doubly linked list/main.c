@@ -25,5 +25,6 @@ struct Node* createNode(int data){
 }
 
 int main(){
+  head= createNode(1001);
   return 0;
 }
