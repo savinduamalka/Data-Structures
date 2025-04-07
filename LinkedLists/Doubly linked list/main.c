@@ -40,6 +40,7 @@ void insertAtBeggining(int data){
 }
 
 int main(){
-  head= createNode(1001);
+  insertAtBeggining(1001);
+  insertAtBeggining(1000);
   return 0;
 }
