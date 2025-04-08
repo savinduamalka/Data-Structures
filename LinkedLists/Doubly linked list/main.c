@@ -63,5 +63,7 @@ int main(){
   insertAtBeggining(1000);
 
   printDoublyLinkedList();
+
+  free(head);
   return 0;
 }
