@@ -32,11 +32,14 @@ void insertAtBeggining(int data){
     return;
   }
 
+  if(head == NULL){
+    head = newNode;
+    return;
+  }
+
   newNode->next=head;
   head->prev=newNode;
-
   head=newNode;
-
 }
 
 int main(){
