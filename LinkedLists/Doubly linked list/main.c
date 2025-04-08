@@ -42,8 +42,26 @@ void insertAtBeggining(int data){
   head=newNode;
 }
 
+void printDoublyLinkedList(){
+  if(!head){
+    printf("Doubly linked list is empty...\n");
+    return;
+  }
+
+  struct Node* temp= head;
+
+  while(temp!=NULL){
+    printf("%d -> ",temp->data);
+    temp= temp->next;
+  }
+
+  printf("NULL\n");
+}
+
 int main(){
   insertAtBeggining(1001);
   insertAtBeggining(1000);
+
+  printDoublyLinkedList();
   return 0;
 }
