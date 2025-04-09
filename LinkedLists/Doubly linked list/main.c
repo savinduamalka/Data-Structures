@@ -58,12 +58,26 @@ void printDoublyLinkedList(){
   printf("NULL\n");
 }
 
+void freeList(){
+  struct Node* temp;
+
+  while(head!=NULL){
+    temp= head;
+    head=head->next;
+    if(head!=NULL){
+      head->prev = NULL;
+    }
+    free(temp);
+  }
+}
+
 int main(){
   insertAtBeggining(1001);
   insertAtBeggining(1000);
 
   printDoublyLinkedList();
 
-  free(head);
+  freeList(head);
+
   return 0;
 }
