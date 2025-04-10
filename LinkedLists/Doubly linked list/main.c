@@ -73,7 +73,7 @@ void freeList(){
 
 void insertAtPosition(int data, int pos){
   if(!head){
-    printf("Can not insert. This list is empty...");
+    printf("Can not insert. This list is empty...\n");
     return;
   }
 
@@ -98,6 +98,27 @@ void insertAtPosition(int data, int pos){
   temp->next=newNode;
 }
 
+void insertAtEnd(int data){
+
+  struct Node* newNode = createNode(data);
+
+  if(!head){
+    head = newNode;
+    return;
+  }
+
+  struct Node* current = head;
+
+  while(current->next!=NULL){
+    current= current->next;
+  }
+
+current->next = newNode;
+newNode->prev = current;
+newNode->next= NULL;
+  
+}
+
 int main(){
   insertAtBeggining(1001);
   insertAtBeggining(1000);
@@ -109,6 +130,10 @@ int main(){
   printDoublyLinkedList();
 
   insertAtPosition(100,3);
+
+  printDoublyLinkedList();
+
+  insertAtEnd(759);
 
   printDoublyLinkedList();
 
