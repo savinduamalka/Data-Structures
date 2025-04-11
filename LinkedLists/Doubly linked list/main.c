@@ -128,26 +128,34 @@ void deleteAtBeginning(){
   struct Node* temp= head;
 
   head= head->next;
-  head->prev= NULL;
+  
+  if(head!=NULL){
+    head->prev = NULL;
+  }
+
 
   free(temp);
 }
 
 int main(){
   insertAtBeggining(1001);
-  insertAtBeggining(1000);
-  insertAtBeggining(1004);
-  insertAtBeggining(1005);
+  // insertAtBeggining(1000);
+  // insertAtBeggining(1004);
+  // insertAtBeggining(1005);
 
   
 
   printDoublyLinkedList();
 
-  insertAtPosition(100,3);
+  //insertAtPosition(100,3);
 
   printDoublyLinkedList();
 
-  insertAtEnd(759);
+  //insertAtEnd(759);
+
+  printDoublyLinkedList();
+
+  deleteAtBeginning();
 
   printDoublyLinkedList();
 
