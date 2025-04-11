@@ -119,6 +119,20 @@ newNode->next= NULL;
   
 }
 
+void deleteAtBeginning(){
+  if(!head){
+    printf("Nothing to be deleted...\n");
+    return;
+  }
+
+  struct Node* temp= head;
+
+  head= head->next;
+  head->prev= NULL;
+
+  free(temp);
+}
+
 int main(){
   insertAtBeggining(1001);
   insertAtBeggining(1000);
