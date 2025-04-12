@@ -137,6 +137,41 @@ void deleteAtBeginning(){
   free(temp);
 }
 
+void deleteAtPosition(int pos){
+  if(!head){
+    printf("Nothing to be deleted...\n");
+    return;
+  }
+
+  struct Node* temp= head;
+
+  if(pos==1){
+    head= head->next;
+    if(head!=NULL){
+      head->prev = NULL;
+    }
+    free(temp);
+    return;
+  }
+
+  int i=1;
+  while(temp!=NULL && i<pos){
+    temp= temp->next;
+    i++;
+  }
+
+  if(temp==NULL){
+    printf("Position not found...\n");
+    return;
+  }
+
+  temp->prev->next = temp->next;
+  if(temp->next!=NULL){
+    temp->next->prev = temp->prev;
+  }
+  free(temp);
+}
+
 int main(){
   insertAtBeggining(1001);
   // insertAtBeggining(1000);
