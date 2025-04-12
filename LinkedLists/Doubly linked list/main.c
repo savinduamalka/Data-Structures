@@ -194,6 +194,9 @@ int main(){
 
   printDoublyLinkedList();
 
+  deleteAtPosition(1);
+  printDoublyLinkedList();
+  
   freeList(head);
 
   return 0;
