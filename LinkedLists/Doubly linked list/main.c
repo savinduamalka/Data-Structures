@@ -218,7 +218,10 @@ int main(){
 
   deleteAtPosition(1);
   printDoublyLinkedList();
-  
+
+  deleteAtEnd();
+
+  printDoublyLinkedList();
   freeList(head);
 
   return 0;
