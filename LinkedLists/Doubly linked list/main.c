@@ -194,6 +194,27 @@ void deleteAtEnd(){
   free(temp);
 }
 
+void reverseDoublyLinkedList() {
+  if (!head) {
+      printf("Doubly linked list is empty...\n");
+      return;
+  }
+
+  struct Node* current = head;
+  struct Node* temp = NULL;
+
+  while (current != NULL) {
+      temp = current->prev;
+      current->prev = current->next;
+      current->next = temp;
+      current = current->prev; 
+  }
+
+  if (temp != NULL) {
+      head = temp->prev;
+  }
+}
+
 int main(){
   insertAtBeggining(1001);
   // insertAtBeggining(1000);
