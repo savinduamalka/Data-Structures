@@ -243,6 +243,10 @@ int main(){
   deleteAtEnd();
 
   printDoublyLinkedList();
+
+  reverseDoublyLinkedList();
+  printDoublyLinkedList();
+
   freeList(head);
 
   return 0;
