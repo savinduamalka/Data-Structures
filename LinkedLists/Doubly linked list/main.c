@@ -215,39 +215,68 @@ void reverseDoublyLinkedList() {
   }
 }
 
-int main(){
-  insertAtBeggining(1001);
-  // insertAtBeggining(1000);
-  // insertAtBeggining(1004);
-  // insertAtBeggining(1005);
+int main() {
+  int choice, data, pos;
 
-  
+  do {
+    printf("\nDoubly Linked List Operations:\n");
+    printf("1. Insert at Beginning\n");
+    printf("2. Insert at Position\n");
+    printf("3. Insert at End\n");
+    printf("4. Delete at Beginning\n");
+    printf("5. Delete at Position\n");
+    printf("6. Delete at End\n");
+    printf("7. Print List\n");
+    printf("8. Reverse List\n");
+    printf("9. Exit\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
 
-  printDoublyLinkedList();
-
-  //insertAtPosition(100,3);
-
-  printDoublyLinkedList();
-
-  //insertAtEnd(759);
-
-  printDoublyLinkedList();
-
-  deleteAtBeginning();
-
-  printDoublyLinkedList();
-
-  deleteAtPosition(1);
-  printDoublyLinkedList();
-
-  deleteAtEnd();
-
-  printDoublyLinkedList();
-
-  reverseDoublyLinkedList();
-  printDoublyLinkedList();
+    switch (choice) {
+      case 1:
+        printf("Enter data to insert at the beginning: ");
+        scanf("%d", &data);
+        insertAtBeggining(data);
+        break;
+      case 2:
+        printf("Enter data to insert: ");
+        scanf("%d", &data);
+        printf("Enter position to insert at: ");
+        scanf("%d", &pos);
+        insertAtPosition(data, pos);
+        break;
+      case 3:
+        printf("Enter data to insert at the end: ");
+        scanf("%d", &data);
+        insertAtEnd(data);
+        break;
+      case 4:
+        deleteAtBeginning();
+        break;
+      case 5:
+        printf("Enter position to delete from: ");
+        scanf("%d", &pos);
+        deleteAtPosition(pos);
+        break;
+      case 6:
+        deleteAtEnd();
+        break;
+      case 7:
+        printDoublyLinkedList();
+        break;
+      case 8:
+        reverseDoublyLinkedList();
+        break;
+      case 9:
+        printf("Exiting program.\n");
+        break;
+      default:
+        printf("Invalid choice. Please try again.\n");
+    }
+  } while (choice != 9);
 
   freeList(head);
 
+  
   return 0;
 }
