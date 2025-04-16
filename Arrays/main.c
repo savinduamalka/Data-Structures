@@ -1,5 +1,17 @@
 #include <stdio.h>
 
+void printArray(int arr[], int size){
+  if (size == 0) {
+    printf("Array is empty...\n");
+} else {
+    printf("The elements in the array are: \n");
+    for (int i = 0; i < size; i++) {
+        printf("%d\t", arr[i]);
+    }
+    printf("\n");
+}
+}
+
 int main() {
     const int MAX = 50;
     int arr[MAX];
@@ -19,6 +31,8 @@ int main() {
         arr[size] = input;
         size++;
     }
+
+    printArray(arr, size);
 
     return 0;
 }
