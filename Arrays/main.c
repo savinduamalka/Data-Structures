@@ -12,6 +12,18 @@ void printArray(int arr[], int size){
 }
 }
 
+void insertAtGivenPosition(int arr[], int *size, int pos, int data){
+    if (pos < 0 || pos > *size) {
+        printf("Invalid position!\n");
+        return;
+    }
+    for(int i = *size; i > pos; i--){
+        arr[i] = arr[i-1];
+    }
+    arr[pos] = data;
+    (*size)++;
+}
+
 int main() {
     const int MAX = 50;
     int arr[MAX];
