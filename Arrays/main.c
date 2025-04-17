@@ -46,5 +46,20 @@ int main() {
 
     printArray(arr, size);
 
+    int pos, data;
+
+    printf("Enter position to insert (0-based index): ");
+    scanf("%d", &pos);
+
+
+    printf("Enter value to insert: ");
+    scanf("%d", &data);
+
+    insertAtGivenPosition(arr, &size, pos, data);
+
+    printf("Array after insertion:\n");
+    printArray(arr, size);
+    
+
     return 0;
 }
