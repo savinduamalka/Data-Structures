@@ -24,6 +24,21 @@ void insertAtGivenPosition(int arr[], int *size, int pos, int data){
     (*size)++;
 }
 
+void deleteAtGivenPosition(int arr[], int *size, int pos) {
+    if (pos < 0 || pos >= *size) {
+        printf("Invalid position for deletion!\n");
+        return;
+    }
+    
+    for (int i = pos; i < *size - 1; i++) {
+        arr[i] = arr[i+1];
+    }
+    
+    (*size)--;
+    
+    printf("Element at position %d deleted successfully.\n", pos);
+}
+
 int main() {
     const int MAX = 50;
     int arr[MAX];
