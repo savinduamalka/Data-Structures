@@ -74,6 +74,14 @@ int main() {
 
     printf("Array after insertion:\n");
     printArray(arr, size);
+
+    printf("\nEnter position to delete (0-based index): ");
+    scanf("%d", &pos);
+
+    deleteAtGivenPosition(arr, &size, pos);
+
+    printf("Array after deletion:\n");
+    printArray(arr, size);
     
 
     return 0;
