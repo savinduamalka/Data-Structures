@@ -47,7 +47,7 @@ void reverseArray(int arr[], int size) {
         arr[i] = arr[size - 1 - i];
         arr[size - 1 - i] = temp;
     }
-    
+
 }
 
 int main() {
@@ -92,6 +92,12 @@ int main() {
     deleteAtGivenPosition(arr, &size, pos);
 
     printf("Array after deletion:\n");
+    printArray(arr, size);
+
+    printf("\nReversing the array...\n");
+    reverseArray(arr, size);
+    
+    printf("Array after reversing:\n");
     printArray(arr, size);
     
 
