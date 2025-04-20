@@ -50,10 +50,12 @@ void reverseArray(int arr[], int size) {
 
 }
 
+
 int main() {
     const int MAX = 50;
     int arr[MAX];
     int size = 0, input;
+    int choice, pos, data;
 
     printf("This is the Data Structure of Arrays...\n");
     printf("....To exit the inserting element for array, press 0 ....\n");
@@ -70,36 +72,52 @@ int main() {
         size++;
     }
 
-    printArray(arr, size);
+    do {
+        printf("\nChoose an operation:\n");
+        printf("1. Print Array\n");
+        printf("2. Insert at Position\n");
+        printf("3. Delete at Position\n");
+        printf("4. Reverse Array\n");
+        printf("0. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
 
-    int pos, data;
+        switch(choice) {
+            case 1:
+                printArray(arr, size);
+                break;
+            case 2:
+                printf("Enter position to insert (0-based index): ");
+                scanf("%d", &pos);
+                printf("Enter value to insert: ");
+                scanf("%d", &data);
+                insertAtGivenPosition(arr, &size, pos, data);
+                printf("Array after insertion:\n");
+                printArray(arr, size);
+                break;
+            case 3:
+                printf("Enter position to delete (0-based index): ");
+                scanf("%d", &pos);
+                deleteAtGivenPosition(arr, &size, pos);
+                printf("Array after deletion:\n");
+                printArray(arr, size);
+                break;
+            case 4:
+                printf("Reversing the array...\n");
+                reverseArray(arr, size);
+                printf("Array after reversing:\n");
+                printArray(arr, size);
+                break;
+            case 0:
+                printf("Exiting program.\n");
+                break;
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    } while(choice != 0);
 
-    printf("Enter position to insert (0-based index): ");
-    scanf("%d", &pos);
-
-
-    printf("Enter value to insert: ");
-    scanf("%d", &data);
-
-    insertAtGivenPosition(arr, &size, pos, data);
-
-    printf("Array after insertion:\n");
-    printArray(arr, size);
-
-    printf("\nEnter position to delete (0-based index): ");
-    scanf("%d", &pos);
-
-    deleteAtGivenPosition(arr, &size, pos);
-
-    printf("Array after deletion:\n");
-    printArray(arr, size);
-
-    printf("\nReversing the array...\n");
-    reverseArray(arr, size);
-    
-    printf("Array after reversing:\n");
-    printArray(arr, size);
     
 
     return 0;
 }
+
