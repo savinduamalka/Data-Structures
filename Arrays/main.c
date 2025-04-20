@@ -59,7 +59,7 @@ void searchElement(int arr[], int size, int key) {
             break;
         }
     }
-    
+
     if (!found) {
         printf("Element %d not found in the array.\n", key);
     }
@@ -70,7 +70,7 @@ int main() {
     const int MAX = 50;
     int arr[MAX];
     int size = 0, input;
-    int choice, pos, data;
+    int choice, pos, data, key;
 
     printf("This is the Data Structure of Arrays...\n");
     printf("....To exit the inserting element for array, press 0 ....\n");
@@ -93,6 +93,7 @@ int main() {
         printf("2. Insert at Position\n");
         printf("3. Delete at Position\n");
         printf("4. Reverse Array\n");
+        printf("5. Search Element\n"); // New menu option
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -123,6 +124,11 @@ int main() {
                 printf("Array after reversing:\n");
                 printArray(arr, size);
                 break;
+            case 5:
+                printf("Enter element to search: ");
+                scanf("%d", &key);
+                searchElement(arr, size, key);
+                break;
             case 0:
                 printf("Exiting program.\n");
                 break;
@@ -132,7 +138,7 @@ int main() {
     } while(choice != 0);
 
 
-
+    
     return 0;
 }
 
