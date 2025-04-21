@@ -65,6 +65,32 @@ void searchElement(int arr[], int size, int key) {
     }
 }
 
+void findMaxMin(int arr[], int size) {
+
+    if (size == 0) {
+        printf("Array is empty.\n");
+        return;
+    }
+
+    int max = arr[0], min = arr[0];
+
+    for (int i = 1; i < size; i++) {
+
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+
+        if (arr[i] < min) {
+
+            min = arr[i];
+        }
+    }
+
+    printf("Maximum element: %d\n", max);
+    printf("Minimum element: %d\n", min);
+    
+}
+
 
 int main() {
     const int MAX = 50;
