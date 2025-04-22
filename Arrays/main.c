@@ -137,7 +137,8 @@ int main() {
         printf("3. Delete at Position\n");
         printf("4. Reverse Array\n");
         printf("5. Search Element\n");
-        printf("6. Find Maximum and Minimum\n"); 
+        printf("6. Find Maximum and Minimum\n");
+        printf("7. Sort Array\n"); 
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -175,6 +176,11 @@ int main() {
                 break;
             case 6:
                 findMaxMin(arr, size);
+                break;
+            case 7:
+                sortArray(arr, size);
+                printf("Array after sorting:\n");
+                printArray(arr, size);
                 break;
             case 0:
                 printf("Exiting program.\n");
