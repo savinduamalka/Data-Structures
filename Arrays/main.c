@@ -122,7 +122,7 @@ void findSumAndAverage(int arr[], int size) {
     }
 
     float average = sum / size;
-    
+
     printf("Sum of elements: %d\n", sum);
     printf("Average of elements: %.2f\n", average);
 }
@@ -157,6 +157,7 @@ int main() {
         printf("5. Search Element\n");
         printf("6. Find Maximum and Minimum\n");
         printf("7. Sort Array\n"); 
+        printf("8. Find Sum and Average\n");
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -199,6 +200,9 @@ int main() {
                 sortArray(arr, size);
                 printf("Array after sorting:\n");
                 printArray(arr, size);
+                break;
+            case 8:
+                findSumAndAverage(arr, size);
                 break;
             case 0:
                 printf("Exiting program.\n");
