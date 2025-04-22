@@ -121,7 +121,7 @@ void findSumAndAverage(int arr[], int size) {
         sum += arr[i];
     }
 
-    float average = sum / size;
+    float average =(float) sum / size;
 
     printf("Sum of elements: %d\n", sum);
     printf("Average of elements: %.2f\n", average);
