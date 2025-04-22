@@ -109,6 +109,24 @@ void sortArray(int arr[], int size) {
     
 }
 
+void findSumAndAverage(int arr[], int size) {
+
+    if (size == 0) {
+        printf("Array is empty.\n");
+        return;
+    }
+
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+
+    float average = sum / size;
+    
+    printf("Sum of elements: %d\n", sum);
+    printf("Average of elements: %.2f\n", average);
+}
+
 int main() {
     const int MAX = 50;
     int arr[MAX];
