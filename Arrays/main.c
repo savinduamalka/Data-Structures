@@ -127,6 +127,33 @@ void findSumAndAverage(int arr[], int size) {
     printf("Average of elements: %.2f\n", average);
 }
 
+void rotateArray(int arr[], int size, int k) {
+    if (size == 0) {
+        printf("Array is empty.\n");
+        return;
+    }
+
+    k = k % size; 
+    int temp[k];
+
+    // Store the first k elements in a temporary array
+    for (int i = 0; i < k; i++) {
+        temp[i] = arr[i];
+    }
+
+    // Shift the rest of the array
+    for (int i = 0; i < size - k; i++) {
+        arr[i] = arr[i + k];
+    }
+
+    // Place the temporary elements at the end
+    for (int i = 0; i < k; i++) {
+        arr[size - k + i] = temp[i];
+    }
+
+    printf("Array rotated by %d positions.\n", k);
+}
+
 int main() {
     const int MAX = 50;
     int arr[MAX];
