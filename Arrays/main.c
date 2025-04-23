@@ -185,6 +185,7 @@ int main() {
         printf("6. Find Maximum and Minimum\n");
         printf("7. Sort Array\n"); 
         printf("8. Find Sum and Average\n");
+        printf("9. Rotate Array\n");
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -230,6 +231,13 @@ int main() {
                 break;
             case 8:
                 findSumAndAverage(arr, size);
+                break;
+            case 9:
+                printf("Enter number of positions to rotate: ");
+                scanf("%d", &pos);
+                rotateArray(arr, size, pos);
+                printf("Array after rotation:\n");
+                printArray(arr, size);
                 break;
             case 0:
                 printf("Exiting program.\n");
