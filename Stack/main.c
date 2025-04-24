@@ -16,6 +16,19 @@ void push(int value) {
   }
 }
 
+int pop() {
+
+  if (top == -1) {
+      printf("Stack Underflow\n");
+      return 1;
+  } else {
+      int value = stack[top];
+      top--;
+      return value;
+  }
+  
+}
+
 int main(){
   printf("Stack in DSA...\n");
   push(1000);
