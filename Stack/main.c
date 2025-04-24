@@ -40,7 +40,7 @@ void display() {
       }
   }
 
-  
+
 }
 
 int main(){
@@ -48,5 +48,6 @@ int main(){
   push(1000);
   push(2000);
   push(3000);
+  display();
   return 0;
 }
