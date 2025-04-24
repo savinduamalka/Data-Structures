@@ -20,7 +20,7 @@ int pop() {
 
   if (top == -1) {
       printf("Stack Underflow\n");
-      return 1;
+      return -1;
   } else {
       int value = stack[top];
       top--;
