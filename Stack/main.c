@@ -26,6 +26,20 @@ int pop() {
       top--;
       return value;
   }
+
+}
+
+void display() {
+
+  if (top == -1) {
+      printf("Stack is empty\n");
+  } else {
+      printf("Stack elements are:\n");
+      for (int i = top; i >= 0; i--) {
+          printf("%d\n", stack[i]);
+      }
+  }
+
   
 }
 
