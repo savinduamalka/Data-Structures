@@ -18,5 +18,8 @@ void push(int value) {
 
 int main(){
   printf("Stack in DSA...\n");
+  push(1000);
+  push(2000);
+  push(3000);
   return 0;
 }
