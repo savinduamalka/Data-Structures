@@ -44,7 +44,7 @@ void display() {
 }
 
 int peek() {
-  
+
   if (top == -1) {
       printf("Stack is empty\n");
       return -1;
@@ -54,10 +54,16 @@ int peek() {
 }
 
 int main(){
-  printf("Stack in DSA...\n");
-  push(1000);
-  push(2000);
-  push(3000);
-  display();
+    push(10);
+    push(20);
+    push(30);
+
+    display();
+
+    printf("Top element is %d\n", peek());
+    printf("%d popped from stack\n", pop());
+    
+    display();
+
   return 0;
 }
