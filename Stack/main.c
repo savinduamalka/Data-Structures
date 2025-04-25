@@ -43,6 +43,16 @@ void display() {
 
 }
 
+int peek() {
+  
+  if (top == -1) {
+      printf("Stack is empty\n");
+      return -1;
+  } else {
+      return stack[top];
+  }
+}
+
 int main(){
   printf("Stack in DSA...\n");
   push(1000);
