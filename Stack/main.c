@@ -75,6 +75,8 @@ int main(){
     display();
 
     printf("Top element is %d\n", peek());
+    printf("Stack size: %d\n", size());
+
     printf("%d popped from stack\n", pop());
     
     display();
