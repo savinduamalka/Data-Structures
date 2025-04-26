@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h> 
 #define MAX 100
 
 
@@ -51,6 +52,11 @@ int peek() {
   } else {
       return stack[top];
   }
+}
+
+bool isEmpty() {
+  return top == -1;
+
 }
 
 int main(){
