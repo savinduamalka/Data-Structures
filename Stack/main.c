@@ -59,6 +59,10 @@ bool isEmpty() {
 
 }
 
+bool isFull() {
+  return top == MAX - 1;
+}
+
 int main(){
     push(10);
     push(20);
