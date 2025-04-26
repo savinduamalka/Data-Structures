@@ -76,8 +76,13 @@ int main(){
 
     printf("Top element is %d\n", peek());
     printf("Stack size: %d\n", size());
+    printf("Is stack empty? %s\n", isEmpty() ? "Yes" : "No");
+    printf("Is stack full? %s\n", isFull() ? "Yes" : "No");
 
     printf("%d popped from stack\n", pop());
+
+    display();
+    printf("Stack size after pop: %d\n", size());
     
     display();
 
