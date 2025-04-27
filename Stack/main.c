@@ -67,6 +67,11 @@ int size() {
   return top + 1;
 }
 
+void clear() {
+  top = -1;
+  printf("Stack cleared!\n");
+}
+
 int main(){
     push(10);
     push(20);
