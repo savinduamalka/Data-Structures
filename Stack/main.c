@@ -72,6 +72,16 @@ void clear() {
   printf("Stack cleared!\n");
 }
 
+bool search(int value) {
+  for (int i = top; i >= 0; i--) {
+      if (stack[i] == value) {
+          return true;
+      }
+  }
+  return false;
+  
+}
+
 int main(){
     push(10);
     push(20);
