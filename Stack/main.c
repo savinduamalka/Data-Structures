@@ -96,7 +96,7 @@ void reverse() {
       tempStack[++tempTop] = pop();
   }
 
-  
+
   for (int i = 0; i <= tempTop; i++) {
       push(tempStack[i]);
   }
@@ -121,6 +121,7 @@ int main(){
     display();
     printf("Stack size after pop: %d\n", size());
     
+    reverse();
     display();
 
   return 0;
