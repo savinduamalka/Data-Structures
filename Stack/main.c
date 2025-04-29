@@ -82,6 +82,28 @@ bool search(int value) {
   
 }
 
+void reverse() {
+  if (top == -1) {
+      printf("Stack is empty, cannot reverse\n");
+      return;
+  }
+
+  int tempStack[MAX];
+  int tempTop = -1;
+
+
+  while (top != -1) {
+      tempStack[++tempTop] = pop();
+  }
+
+  
+  for (int i = 0; i <= tempTop; i++) {
+      push(tempStack[i]);
+  }
+
+  printf("Stack reversed!\n");
+}
+
 int main(){
     push(10);
     push(20);
