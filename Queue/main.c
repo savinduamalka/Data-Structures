@@ -21,5 +21,9 @@ void enqueue(int value) {
 int main(){
 
   printf("Hello DSA Queue....\n");
+  
+  enqueue(10);
+  enqueue(20);
+  enqueue(30);
   return 0;
 }
