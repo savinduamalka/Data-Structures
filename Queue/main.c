@@ -18,6 +18,20 @@ void enqueue(int value) {
 
 }
 
+void dequeue() {
+  
+  if (front == -1 || front > rear) {
+      printf("Queue is empty (Underflow)\n");
+  } else {
+      printf("Removed %d\n", queue[front]);
+      front++;
+      if (front > rear) { // Reset the queue when it becomes empty
+          front = -1;
+          rear = -1;
+      }
+  }
+}
+
 int main(){
 
   printf("Hello DSA Queue....\n");
