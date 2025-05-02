@@ -19,7 +19,7 @@ void enqueue(int value) {
 }
 
 void dequeue() {
-  
+
   if (front == -1 || front > rear) {
       printf("Queue is empty (Underflow)\n");
   } else {
@@ -39,5 +39,10 @@ int main(){
   enqueue(10);
   enqueue(20);
   enqueue(30);
+
+  dequeue();
+  dequeue();
+  dequeue();
+  dequeue();
   return 0;
 }
