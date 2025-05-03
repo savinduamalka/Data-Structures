@@ -25,10 +25,19 @@ void dequeue() {
   } else {
       printf("Removed %d\n", queue[front]);
       front++;
-      if (front > rear) { // Reset the queue when it becomes empty
+      if (front > rear) { 
           front = -1;
           rear = -1;
       }
+  }
+}
+
+void peek() {
+  if (front == -1 || front > rear) {
+      printf("Queue is empty\n");
+  } else {
+      printf("Front element is: %d\n", queue[front]);
+
   }
 }
 
