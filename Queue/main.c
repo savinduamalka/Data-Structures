@@ -49,9 +49,15 @@ int main(){
   enqueue(20);
   enqueue(30);
 
+  peek();
+
+  dequeue();
+  peek();
+
   dequeue();
   dequeue();
   dequeue();
-  dequeue();
+  peek();
+  
   return 0;
 }
