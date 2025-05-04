@@ -51,7 +51,7 @@ void display() {
       }
       printf("\n");
   }
-  
+
 }
 
 
@@ -63,15 +63,20 @@ int main(){
   enqueue(20);
   enqueue(30);
 
+  display();
+
   peek();
 
   dequeue();
   peek();
+  display();
 
   dequeue();
   dequeue();
   dequeue();
   peek();
+
+  display();
   
   return 0;
 }
