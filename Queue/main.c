@@ -41,6 +41,20 @@ void peek() {
   }
 }
 
+void display() {
+  if (front == -1 || front > rear) {
+      printf("Queue is empty\n");
+  } else {
+      printf("Queue elements are: ");
+      for (int i = front; i <= rear; i++) {
+          printf("%d ", queue[i]);
+      }
+      printf("\n");
+  }
+  
+}
+
+
 int main(){
 
   printf("Hello DSA Queue....\n");
