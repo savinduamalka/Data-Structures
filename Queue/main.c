@@ -63,37 +63,45 @@ void display() {
 }
 
 
-int main(){
+int main() {
+    int choice, value;
 
-  printf("Hello DSA Queue....\n");
+    printf("Queue Operations:\n");
+    printf("1. Enqueue\n");
+    printf("2. Dequeue\n");
+    printf("3. Peek\n");
+    printf("4. Display\n");
+    printf("5. Exit\n");
 
-  if (isEmpty()) {
-      printf("Queue is initially empty.\n");
-  }
+    while (1) {
+        printf("\nEnter your choice: ");
+        scanf("%d", &choice);
 
-  enqueue(10);
-  enqueue(20);
-  enqueue(30);
+        switch (choice) {
+            case 1:
+                printf("Enter the value to enqueue: ");
+                scanf("%d", &value);
+                enqueue(value);
+                break;
 
-  display();
+            case 2:
+                dequeue();
+                break;
 
-  peek();
+            case 3:
+                peek();
+                break;
 
-  dequeue();
-  peek();
-  display();
+            case 4:
+                display();
+                break;
 
-  dequeue();
-  dequeue();
+            case 5:
+                printf("Exiting program.\n");
+                return 0;
 
-  if (isEmpty()) {
-      printf("Queue became empty after dequeues.\n");
-  }
-
-  dequeue(); 
-  peek();
-
-  display();
-
-  return 0;
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    }
 }
