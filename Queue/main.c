@@ -11,9 +11,13 @@ bool isEmpty() {
     return front == -1;
 }
 
+bool isFull() {
+    return rear == SIZE - 1;
+}
+
 void enqueue(int value) {
 
-  if (rear == SIZE - 1)
+  if (isFull())
       printf("Queue is full (Overflow)\n");
   else {
       if (isEmpty()) front = 0; 
@@ -71,7 +75,9 @@ int main() {
     printf("2. Dequeue\n");
     printf("3. Peek\n");
     printf("4. Display\n");
-    printf("5. Exit\n");
+    printf("5. Is Empty\n");
+    printf("6. Is Full\n");
+    printf("7. Exit\n");
 
     while (1) {
         printf("\nEnter your choice: ");
@@ -97,6 +103,22 @@ int main() {
                 break;
 
             case 5:
+                if (isEmpty()) {
+                    printf("Queue is empty.\n");
+                } else {
+                    printf("Queue is not empty.\n");
+                }
+                break;
+
+            case 6:
+                if (isFull()) {
+                    printf("Queue is full.\n");
+                } else {
+                    printf("Queue is not full.\n");
+                }
+                break;
+
+            case 7:
                 printf("Exiting program.\n");
                 return 0;
 
