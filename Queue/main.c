@@ -83,7 +83,8 @@ int main() {
     printf("4. Display\n");
     printf("5. Is Empty\n");
     printf("6. Is Full\n");
-    printf("7. Exit\n");
+    printf("7. Size\n");
+    printf("8. Exit\n");
 
     while (1) {
         printf("\nEnter your choice: ");
@@ -125,6 +126,10 @@ int main() {
                 break;
 
             case 7:
+                printf("Current queue size: %d\n", size());
+                break;
+
+            case 8:
                 printf("Exiting program.\n");
                 return 0;
 
