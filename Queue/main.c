@@ -15,6 +15,12 @@ bool isFull() {
     return rear == SIZE - 1;
 }
 
+int size() {
+    if (isEmpty())
+        return 0;
+    return rear - front + 1;
+}
+
 void enqueue(int value) {
 
   if (isFull())
