@@ -73,6 +73,15 @@ void display() {
 }
 
 
+void rearElement() {
+    
+    if (isEmpty()) {
+        printf("Queue is empty\n");
+    } else {
+        printf("Rear element is: %d\n", queue[rear]);
+    }
+}
+
 int main() {
     int choice, value;
 
