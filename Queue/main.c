@@ -15,6 +15,21 @@ bool isFull() {
     return rear == SIZE - 1;
 }
 
+void search(int value) {
+    
+    if (isEmpty()) {
+        printf("Queue is empty\n");
+    } else {
+        for (int i = front; i <= rear; i++) {
+            if (queue[i] == value) {
+                printf("Value %d found at position %d\n", value, i - front + 1);
+                return;
+            }
+        }
+        printf("Value %d not found in the queue\n", value);
+    }
+}
+
 int size() {
     if (isEmpty())
         return 0;
