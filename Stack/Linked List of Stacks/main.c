@@ -35,10 +35,12 @@ void pop(){
     return;
   }
 
+  int poppedValue;
   struct Node* temp=top;
-  top=top->next;
+  poppedValue=temp->data;
+  top=temp->next;
   free(temp);
-  printf("Popped element\n");
+  printf("Popped %d\n", poppedValue);
 }
 
 int main(){
@@ -47,6 +49,9 @@ int main(){
   push(3);
   push(4);
   push(5);
+
+  print();
+  pop();
 
   print();
 
