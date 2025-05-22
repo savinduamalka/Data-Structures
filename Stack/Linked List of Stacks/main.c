@@ -11,6 +11,7 @@ void push(int data) {
     newNode->data = data;
     newNode->next = top;
     top = newNode;
+    printf("Pushed %d\n", data);
 }
 
 void print(){
@@ -25,6 +26,19 @@ void print(){
     temp=temp->next;
   }
   printf("\n");
+}
+
+void pop(){
+
+  if(!top){
+    printf("Stack is underflow\n");
+    return;
+  }
+
+  struct Node* temp=top;
+  top=top->next;
+  free(temp);
+  printf("Popped element\n");
 }
 
 int main(){
