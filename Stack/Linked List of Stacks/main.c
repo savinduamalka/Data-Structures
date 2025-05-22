@@ -34,6 +34,7 @@ int main(){
   push(4);
   push(5);
 
-  
+  print();
+
   return 0;
 }
