@@ -1,10 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 struct Node {
     int data;
     struct Node* next;
 } *top = NULL;
+
+bool isEmpty() {
+    return top == NULL;
+}
 
 void push(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
