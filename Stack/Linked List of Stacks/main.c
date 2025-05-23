@@ -21,7 +21,7 @@ void push(int data) {
 
 void print(){
   struct Node* temp=top;
-  if(!temp){
+  if(isEmpty()){
     printf("Stack is underflow\n");
     return;   
   }
@@ -35,7 +35,7 @@ void print(){
 
 void pop(){
 
-  if(!top){
+  if(isEmpty()){
     printf("Stack is underflow\n");
     return;
   }
