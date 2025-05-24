@@ -48,6 +48,14 @@ void pop(){
   printf("Popped %d\n", poppedValue);
 }
 
+void peek() {
+    if (isEmpty()) {
+        printf("Stack is empty\n");
+        return;
+    }
+    printf("Top element is %d\n", top->data);
+}
+
 int main(){
   push(1);
   push(2);
