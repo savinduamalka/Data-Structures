@@ -67,6 +67,7 @@ int main(){
   pop();
 
   print();
+  peek();
 
   return 0;
 }
