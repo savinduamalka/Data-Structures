@@ -11,6 +11,11 @@ typedef struct {
     QueueNode* rear;
 } Queue;
 
+typedef struct ListNode {
+    Queue* queue;
+    struct ListNode* next;
+} ListNode;
+
 int main(){
 
   printf("Linked List of Queues\n");
