@@ -17,7 +17,7 @@ typedef struct ListNode {
 } ListNode;
 
 QueueNode* createQueueNode(int data) {
-    
+
     QueueNode* newNode = (QueueNode*)malloc(sizeof(QueueNode));
     if (newNode == NULL) {
         printf("Memory allocation failed\n");
@@ -26,6 +26,18 @@ QueueNode* createQueueNode(int data) {
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
+}
+
+
+Queue* createQueue() {
+    Queue* q = (Queue*)malloc(sizeof(Queue));
+    if (q == NULL) {
+        printf("Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+    q->front = q->rear = NULL;
+    
+    return q;
 }
 
 int main(){
