@@ -16,6 +16,18 @@ typedef struct ListNode {
     struct ListNode* next;
 } ListNode;
 
+QueueNode* createQueueNode(int data) {
+    
+    QueueNode* newNode = (QueueNode*)malloc(sizeof(QueueNode));
+    if (newNode == NULL) {
+        printf("Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+    newNode->data = data;
+    newNode->next = NULL;
+    return newNode;
+}
+
 int main(){
 
   printf("Linked List of Queues\n");
