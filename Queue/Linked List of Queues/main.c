@@ -36,11 +36,20 @@ Queue* createQueue() {
         exit(EXIT_FAILURE);
     }
     q->front = q->rear = NULL;
-    
+
     return q;
 }
 
+int isQueueEmpty(Queue* q) {
+    
+    return q->front == NULL;
+}
+
 int main(){
+    
+    ListNode* head = NULL;
+
+     Queue* q1 = createQueue();
 
   printf("Linked List of Queues\n");
 
