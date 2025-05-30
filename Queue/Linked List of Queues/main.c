@@ -46,7 +46,7 @@ int isQueueEmpty(Queue* q) {
 }
 
 void enqueue(Queue* q, int data) {
-    
+
     QueueNode* newNode = createQueueNode(data);
     if (q->rear == NULL) {
         q->front = q->rear = newNode;
@@ -60,9 +60,12 @@ int main(){
     
     ListNode* head = NULL;
 
-     Queue* q1 = createQueue();
+    Queue* q1 = createQueue();
+    enqueue(q1, 10);
+    enqueue(q1, 20);
+    enqueue(q1, 30);
 
-  printf("Linked List of Queues\n");
+    printf("Linked List of Queues\n");
 
   return 0;
 }
