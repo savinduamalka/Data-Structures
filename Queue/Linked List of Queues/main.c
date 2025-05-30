@@ -41,8 +41,19 @@ Queue* createQueue() {
 }
 
 int isQueueEmpty(Queue* q) {
-    
+
     return q->front == NULL;
+}
+
+void enqueue(Queue* q, int data) {
+    
+    QueueNode* newNode = createQueueNode(data);
+    if (q->rear == NULL) {
+        q->front = q->rear = newNode;
+        return;
+    }
+    q->rear->next = newNode;
+    q->rear = newNode;
 }
 
 int main(){
