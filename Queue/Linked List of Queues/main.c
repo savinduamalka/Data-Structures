@@ -56,6 +56,23 @@ void enqueue(Queue* q, int data) {
     q->rear = newNode;
 }
 
+int dequeue(Queue* q) {
+    if (isQueueEmpty(q)) {
+        printf("Queue is empty\n");
+        return -1;
+    }
+    QueueNode* temp = q->front;
+    int data = temp->data;
+    q->front = q->front->next;
+    
+    if (q->front == NULL) {
+        q->rear = NULL;
+    }
+    
+    free(temp);
+    return data;
+}
+
 int main(){
     
     ListNode* head = NULL;
