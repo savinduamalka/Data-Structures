@@ -73,6 +73,20 @@ int dequeue(Queue* q) {
     return data;
 }
 
+void displayQueue(Queue* q) {
+    
+    if (isQueueEmpty(q)) {
+        printf("Queue is empty\n");
+        return;
+    }
+    QueueNode* temp = q->front;
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
 int main(){
     
     ListNode* head = NULL;
