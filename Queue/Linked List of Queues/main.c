@@ -87,6 +87,18 @@ void displayQueue(Queue* q) {
     printf("\n");
 }
 
+ListNode* createListNode(Queue* q) {
+    
+    ListNode* newNode = (ListNode*)malloc(sizeof(ListNode));
+    if (newNode == NULL) {
+        printf("Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+    newNode->queue = q;
+    newNode->next = NULL;
+    return newNode;
+}
+
 int main(){
     
     ListNode* head = NULL;
