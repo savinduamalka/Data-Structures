@@ -99,6 +99,21 @@ ListNode* createListNode(Queue* q) {
     return newNode;
 }
 
+void addQueueToList(ListNode** head, Queue* q) {
+    
+    ListNode* newNode = createListNode(q);
+    if (*head == NULL) {
+        *head = newNode;
+        return;
+    }
+    
+    ListNode* temp = *head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+}
+
 int main(){
     
     ListNode* head = NULL;
