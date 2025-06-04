@@ -122,6 +122,13 @@ int main(){
     enqueue(q1, 10);
     enqueue(q1, 20);
     enqueue(q1, 30);
+    addQueueToList(&head, q1);
+
+    Queue* q2 = createQueue();
+    enqueue(q2, 40);
+    enqueue(q2, 50);
+    enqueue(q2, 60);
+    addQueueToList(&head, q2);
 
     printf("Linked List of Queues\n");
 
