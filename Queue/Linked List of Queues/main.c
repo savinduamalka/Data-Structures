@@ -114,6 +114,21 @@ void addQueueToList(ListNode** head, Queue* q) {
     temp->next = newNode;
 }
 
+void displayListOfQueues(ListNode* head) {
+    if (head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    
+    ListNode* temp = head;
+    int i = 1;
+    while (temp != NULL) {
+        printf("Queue %d: ", i++);
+        displayQueue(temp->queue);
+        temp = temp->next;
+    }
+}
+
 int main(){
     
     ListNode* head = NULL;
