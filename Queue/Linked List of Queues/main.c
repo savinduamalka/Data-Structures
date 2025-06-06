@@ -152,7 +152,8 @@ int main(){
     enqueue(q3, 90);
     addQueueToList(&head, q3);
 
-    printf("Linked List of Queues\n");
+    printf("Linked List of Queues:\n");
+    displayListOfQueues(head);
 
   return 0;
 }
