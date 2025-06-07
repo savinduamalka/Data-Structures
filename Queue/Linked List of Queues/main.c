@@ -129,6 +129,14 @@ void displayListOfQueues(ListNode* head) {
     }
 }
 
+void freeQueue(Queue* q) {
+    
+    while (!isQueueEmpty(q)) {
+        dequeue(q);
+    }
+    free(q);
+}
+
 int main(){
     
     ListNode* head = NULL;
