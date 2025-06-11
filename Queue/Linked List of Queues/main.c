@@ -137,6 +137,18 @@ void freeQueue(Queue* q) {
     free(q);
 }
 
+void freeListOfQueues(ListNode* head) {
+    
+    ListNode* temp;
+    while (head != NULL) {
+        temp = head;
+        head = head->next;
+        freeQueue(temp->queue);
+        free(temp);
+    }
+}
+
+
 int main(){
     
     ListNode* head = NULL;
