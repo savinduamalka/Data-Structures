@@ -175,5 +175,8 @@ int main(){
     printf("Linked List of Queues:\n");
     displayListOfQueues(head);
 
+    printf("\nDequeuing from first queue: %d\n", dequeue(q1));
+    printf("Dequeuing from second queue: %d\n", dequeue(q2));
+
   return 0;
 }
