@@ -178,5 +178,8 @@ int main(){
     printf("\nDequeuing from first queue: %d\n", dequeue(q1));
     printf("Dequeuing from second queue: %d\n", dequeue(q2));
 
+    printf("\nAfter dequeuing:\n");
+    displayListOfQueues(head);
+
   return 0;
 }
