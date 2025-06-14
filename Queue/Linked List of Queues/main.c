@@ -181,5 +181,7 @@ int main(){
     printf("\nAfter dequeuing:\n");
     displayListOfQueues(head);
 
+    freeListOfQueues(head);
+
   return 0;
 }
