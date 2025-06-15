@@ -148,6 +148,17 @@ void freeListOfQueues(ListNode* head) {
     }
 }
 
+int size(Queue* q) {
+    
+    int count = 0;
+    QueueNode* temp = q->front;
+    while (temp != NULL) {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
+
 
 int main(){
     
