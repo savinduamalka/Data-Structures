@@ -159,6 +159,15 @@ int size(Queue* q) {
     return count;
 }
 
+int peek(Queue* q) {
+    
+    if (isQueueEmpty(q)) {
+        printf("Queue is empty\n");
+        return -1;
+    }
+    return q->front->data;
+}
+
 
 int main(){
     
@@ -191,6 +200,10 @@ int main(){
 
     printf("\nAfter dequeuing:\n");
     displayListOfQueues(head);
+
+    printf("\nPeeking front of first queue: %d\n", peek(q1));
+    printf("Peeking front of second queue: %d\n", peek(q2));
+    printf("Peeking front of third queue: %d\n", peek(q3));
 
     freeListOfQueues(head);
 
