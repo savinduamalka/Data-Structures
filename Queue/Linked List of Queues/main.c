@@ -159,6 +159,17 @@ int size(Queue* q) {
     return count;
 }
 
+// Add this function to count the number of queues in the list
+int listSize(ListNode* head) {
+    int count = 0;
+    ListNode* temp = head;
+    while (temp != NULL) {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
+
 int peek(Queue* q) {
     
     if (isQueueEmpty(q)) {
@@ -169,43 +180,98 @@ int peek(Queue* q) {
 }
 
 
-int main(){
-    
+int main() {
     ListNode* head = NULL;
+    int choice, queue_num, data;
+    Queue* selected_queue = NULL;
+    ListNode* temp = NULL;
 
-    Queue* q1 = createQueue();
-    enqueue(q1, 10);
-    enqueue(q1, 20);
-    enqueue(q1, 30);
-    addQueueToList(&head, q1);
+    while (1) {
+        printf("\n--- Linked List of Queues Menu ---\n");
+        printf("1. Add new queue\n");
+        printf("2. Enqueue to a queue\n");
+        printf("3. Dequeue from a queue\n");
+        printf("4. Peek front of a queue\n");
+        printf("5. Display a queue\n");
+        printf("6. Display all queues\n");
+        printf("7. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
 
-    Queue* q2 = createQueue();
-    enqueue(q2, 40);
-    enqueue(q2, 50);
-    enqueue(q2, 60);
-    addQueueToList(&head, q2);
-
-    Queue* q3 = createQueue();
-    enqueue(q3, 60);
-    enqueue(q3, 70);
-    enqueue(q3, 80);
-    enqueue(q3, 90);
-    addQueueToList(&head, q3);
-
-    printf("Linked List of Queues:\n");
-    displayListOfQueues(head);
-
-    printf("\nDequeuing from first queue: %d\n", dequeue(q1));
-    printf("Dequeuing from second queue: %d\n", dequeue(q2));
-
-    printf("\nAfter dequeuing:\n");
-    displayListOfQueues(head);
-
-    printf("\nPeeking front of first queue: %d\n", peek(q1));
-    printf("Peeking front of second queue: %d\n", peek(q2));
-    printf("Peeking front of third queue: %d\n", peek(q3));
-
-    freeListOfQueues(head);
-
-  return 0;
+        switch (choice) {
+            case 1:
+                {
+                    Queue* q = createQueue();
+                    addQueueToList(&head, q);
+                    printf("New queue added as Queue %d.\n", listSize(head));
+                }
+                break;
+            case 2:
+                printf("Enter queue number to enqueue to: ");
+                scanf("%d", &queue_num);
+                temp = head;
+                for (int i = 1; temp != NULL && i < queue_num; i++)
+                    temp = temp->next;
+                if (temp == NULL) {
+                    printf("Invalid queue number.\n");
+                    break;
+                }
+                printf("Enter data to enqueue: ");
+                scanf("%d", &data);
+                enqueue(temp->queue, data);
+                printf("Enqueued %d to Queue %d.\n", data, queue_num);
+                break;
+            case 3:
+                printf("Enter queue number to dequeue from: ");
+                scanf("%d", &queue_num);
+                temp = head;
+                for (int i = 1; temp != NULL && i < queue_num; i++)
+                    temp = temp->next;
+                if (temp == NULL) {
+                    printf("Invalid queue number.\n");
+                    break;
+                }
+                data = dequeue(temp->queue);
+                if (data != -1)
+                    printf("Dequeued %d from Queue %d.\n", data, queue_num);
+                break;
+            case 4:
+                printf("Enter queue number to peek: ");
+                scanf("%d", &queue_num);
+                temp = head;
+                for (int i = 1; temp != NULL && i < queue_num; i++)
+                    temp = temp->next;
+                if (temp == NULL) {
+                    printf("Invalid queue number.\n");
+                    break;
+                }
+                data = peek(temp->queue);
+                if (data != -1)
+                    printf("Front of Queue %d: %d\n", queue_num, data);
+                break;
+            case 5:
+                printf("Enter queue number to display: ");
+                scanf("%d", &queue_num);
+                temp = head;
+                for (int i = 1; temp != NULL && i < queue_num; i++)
+                    temp = temp->next;
+                if (temp == NULL) {
+                    printf("Invalid queue number.\n");
+                    break;
+                }
+                printf("Queue %d: ", queue_num);
+                displayQueue(temp->queue);
+                break;
+            case 6:
+                printf("All queues:\n");
+                displayListOfQueues(head);
+                break;
+            case 7:
+                freeListOfQueues(head);
+                printf("Exiting...\n");
+                return 0;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
 }
