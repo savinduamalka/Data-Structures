@@ -22,6 +22,22 @@ void enqueue(int value) {
   printf("Inserted %d\n",value);
 }
 
+void dequeue(){
+  if(front==-1){
+    printf("Queue is empty (Underflow)\n");
+    return;
+  }
+
+  printf("Removed %d\n",queue[front]);
+
+  if(front==rear){
+    front=-1;
+    rear=-1;
+  }else{
+    front=(front+1)%SIZE;
+  }
+}
+
 int main(){
 
   return 0;
