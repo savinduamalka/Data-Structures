@@ -53,17 +53,34 @@ void printQueue(){
   }
   printf("\n");
 }
-int main(){
+int main() {
+  int choice, value;
+  while (1) {
+    printf("\nCircular Queue Operations:\n");
+    printf("1. Enqueue\n");
+    printf("2. Dequeue\n");
+    printf("3. Print Queue\n");
+    printf("4. Exit\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
 
-  enqueue(1);
-  enqueue(2);
-  enqueue(3);
-  enqueue(4);
-  enqueue(5);
-  printQueue();
-  dequeue();
-  printQueue();
-  enqueue(6);
-  printQueue();
-  return 0;
+    switch (choice) {
+      case 1:
+        printf("Enter value to enqueue: ");
+        scanf("%d", &value);
+        enqueue(value);
+        break;
+      case 2:
+        dequeue();
+        break;
+      case 3:
+        printQueue();
+        break;
+      case 4:
+        printf("Exiting...\n");
+        return 0;
+      default:
+        printf("Invalid choice. Try again.\n");
+    }
+  }
 }
